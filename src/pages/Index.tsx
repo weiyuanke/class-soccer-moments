@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import SectionHeading from '@/components/SectionHeading';
 import MemoriesGallery from '@/components/MemoriesGallery';
@@ -6,13 +5,12 @@ import MatchTimeline from '@/components/MatchTimeline';
 import PlayerSpotlight from '@/components/PlayerSpotlight';
 import MemoryCard from '@/components/MemoryCard';
 import AnimatedImage from '@/components/AnimatedImage';
-import { ArrowDown, Award, Calendar, Camera, Flag, Users } from 'lucide-react';
+import { ArrowDown, Award, Calendar, Camera, Flag, Trophy, Users } from 'lucide-react';
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   
   useEffect(() => {
-    // Initialize intersection observer for scroll animations
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -25,7 +23,6 @@ const Index = () => {
       { threshold: 0.1 }
     );
 
-    // Select all elements with the animate-on-scroll class
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     animatedElements.forEach((el) => observerRef.current?.observe(el));
 
@@ -36,7 +33,6 @@ const Index = () => {
     };
   }, []);
 
-  // Sample data for memories gallery
   const memories = [
     {
       id: 1,
@@ -64,7 +60,6 @@ const Index = () => {
     }
   ];
 
-  // Sample data for timeline events
   const timelineEvents = [
     {
       id: 1,
@@ -94,7 +89,6 @@ const Index = () => {
     }
   ];
 
-  // Sample data for player spotlight
   const players = [
     {
       id: 1,
@@ -119,7 +113,6 @@ const Index = () => {
     }
   ];
 
-  // Sample data for memories
   const memoryCards = [
     {
       id: 1,
@@ -146,7 +139,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <AnimatedImage
@@ -189,7 +181,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Highlights Section */}
       <section id="highlights" className="section-padding bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading 
@@ -229,7 +220,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
       <section className="section-padding">
         <div className="container mx-auto">
           <SectionHeading 
@@ -243,7 +233,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Player Spotlight */}
       <section className="section-padding bg-gray-50">
         <div className="container mx-auto">
           <SectionHeading 
@@ -264,7 +253,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Memories Section */}
       <section id="memories" className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
@@ -300,7 +288,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quote Section */}
       <section className="py-20 relative">
         <div className="absolute inset-0 z-0">
           <AnimatedImage
@@ -323,7 +310,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
       <section className="section-padding bg-white">
         <div className="container mx-auto">
           <SectionHeading 
@@ -365,7 +351,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400 text-sm">
